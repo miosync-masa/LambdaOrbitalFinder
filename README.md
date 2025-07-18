@@ -34,8 +34,6 @@ The system discovers orbital patterns purely from structural tensor dynamics, wi
 
 ![Results](http://www.miosync.link/github/download-1.png)
 ![Results2](http://www.miosync.link/github/download-2.png)
-![Results2](http://www.miosync.link/github/download-3.png)
-![Results2](http://www.miosync.link/github/download-4.png)
 
 ---
 
