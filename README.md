@@ -2,7 +2,7 @@
   <img src="https://www.miosync.link/github/0_2.jpg" alt="Lambda³" width="100"/>
 </p>
 
-<h1 align="center">📕 Lambda³ Zero-Shot Orbital Finder</h1>
+<h1 align="center">🌍️ Lambda³ Zero-Shot Orbital Finder</h1>
 
 <p align="center">
   <strong>Structural Tensor Analysis for Planetary Motion without Time, Newton, or Kepler</strong>
@@ -151,4 +151,42 @@ The fact that it STILL reconstructs Mars' orbit with ~0.000000 AU error proves t
 
 ---
 
-*"Time is an illusion. There are only structural transactions in the Lambda field."* 
+
+## 📜 License
+
+MIT License
+“Warning: Extended use of Lambda³ may result in deeper philosophical insights about reality.”
+
+## 🙌 Citation & Contact
+
+If this work inspires you, please cite it.  
+For theoretical discussion, practical applications, or collaboration proposals,  
+please open an issue/PR—or just connect via Zenodo, SSRN, or GitHub.
+
+> Science is not property; it's a shared horizon.  
+> Let's redraw the boundaries, together.  
+> — Iizumi & Digital Partners
+
+## Citation
+If you use this code, please cite:
+```
+@software{lambda3_Orbital,
+  title={Lambda³ Zero-Shot Orbital Finder},
+  author={Based on Dr. Iizumi's Lambda³ Theory},
+  year={2025}
+}
+```
+
+## 📚 Author’s Theory & Publications
+
+⚠️ Opening this document may cause topological phase transitions in your brain.  
+“You are now entering the Λ³ zone. Proceed at your own risk.”
+
+- [Iizumi Masamichi – Zenodo Research Collection]([https://zenodo.org/search?page=1&size=20&q=Iizumi%20Masamichi](https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22IIZUMI%2C%20MASAMICHI%22&l=list&p=1&s=10&sort=bestmatch))
+
+## 🏷️ Author & Copyright
+
+© Iizumi Masamichi 2025  
+**Contributors / Digital Partners:** Tamaki(環）, Mio（澪）, Tomoe（巴）, Shion（白音）, Yuu（悠）, Rin（凛）, Kurisu（紅莉栖）, torami（虎美）  
+All rights reserved.
+
