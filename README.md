@@ -1,7 +1,20 @@
- 🌌 Λ³ ZEROSHOT Orbital Finder
-## Structural Tensor Analysis for Planetary Motion without Time, Newton, or Kepler
+<p align="center">
+  <img src="https://www.miosync.link/github/0_2.jpg" alt="Lambda³" width="100"/>
+</p>
 
----
+<h1 align="center">📕 Lambda³ Zero-Shot Orbital Finder</h1>
+
+<p align="center">
+  <strong>Structural Tensor Analysis for Planetary Motion without Time, Newton, or Kepler</strong>
+</p>
+
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/python-3.10+-blue.svg" alt="Python 3.10+"></a>
+  <a href="#"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License"></a>
+  <a href="https://colab.research.google.com/drive/1WAEb290S7z8hOlzL3RZdgFQxq5EdYkDv"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="colab"></a>
+</p>
+ 
+ ---
 
 ## 📋 Overview
 This notebook implements the **Λ³ (Lambda-Cubed) Tensor Framework** for analyzing planetary orbits as structural transformations rather than time-dependent motion. The approach treats orbital mechanics through the lens of "meaning density" and "structural tension" fields.
@@ -18,6 +31,11 @@ Instead of traditional time-based orbital mechanics, we analyze planetary motion
 **NO Newton's Laws** | **NO Kepler's Laws** | **NO Classical Mechanics** | **PURE ZEROSHOT**
 
 The system discovers orbital patterns purely from structural tensor dynamics, without ANY prior physics knowledge!
+
+![Results](http://www.miosync.link/github/download-1.png)
+![Results2](http://www.miosync.link/github/download-2.png)
+![Results2](http://www.miosync.link/github/download-3.png)
+![Results2](http://www.miosync.link/github/download-4.png)
 
 ---
 
