@@ -2,11 +2,13 @@
   <img src="https://www.miosync.link/github/0_4.jpg" alt="Lambda³" width="400"/>
 </p>
 
-<h1>Λ³ Stargazer</h1>
+<h1 align="center">Λ³ Stargazer</h1>
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Stars](https://img.shields.io/github/stars/miosync-masa/LambdaOrbitalFinder?style=social)](https://github.com/miosync-masa/LambdaOrbitalFinder/)
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/python-3.10+-blue.svg" alt="Python 3.10+"></a>
+  <a href="#"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License"></a>
+  <a href="https://colab.research.google.com/drive/1WAEb290S7z8hOlzL3RZdgFQxq5EdYkDv"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="colab"></a>
+</p>
 
 **Λ³ Stargazer** - A revolutionary framework to detect hidden celestial bodies through topological charge analysis of orbital perturbations, gazing beyond the visible to find unseen worlds.
 
