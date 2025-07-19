@@ -1,4 +1,8 @@
-# Λ³ Stargazer
+<p align="center">
+  <img src="https://www.miosync.link/github/0_4.jpg" alt="Lambda³" width="400"/>
+</p>
+
+<h1>Λ³ Stargazer</h1>
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
