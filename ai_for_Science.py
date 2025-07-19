@@ -13,20 +13,53 @@ import warnings
 warnings.filterwarnings('ignore')
 
 """
-🌟 Λ PARAMETERS vs ECCENTRICITY: CORRELATION DISCOVERY
-=====================================================
-Data generation: Kepler (for accuracy)
-Analysis & Prediction: Pure Λ³ (NO PHYSICS!)
+Lambda³ (Λ³) Framework: Orbital Parameter Discovery Through Structural Analysis
+
+This module implements an AI-driven approach to discover relationships between
+orbital parameters using only geometric features extracted from position data.
+The analysis is performed without explicit use of physical laws or equations.
+
+Main Components:
+1. Orbit Generation: Creates test data using Kepler's equations (ground truth)
+2. Feature Extraction: Computes Λ³ structural parameters from trajectories  
+3. Pattern Discovery: Identifies correlations between features and eccentricity
+4. Model Fitting: Derives empirical formulas from discovered patterns
 """
 
-# ========= Kepler Orbit Functions (for data generation only) =========
+# =============================================================================
+# Kepler Orbit Functions (Data Generation)
+# =============================================================================
+
 def kepler_equation(E, M, e):
+    """
+    Kepler's equation for orbital motion.
+    
+    Args:
+        E: Eccentric anomaly
+        M: Mean anomaly
+        e: Eccentricity
+        
+    Returns:
+        Residual for Newton's method solver
+    """
     return E - e * np.sin(E) - M
 
 def kepler_equation_derivative(E, M, e):
+    """Derivative of Kepler's equation with respect to E."""
     return 1 - e * np.cos(E)
 
 def solve_kepler(M, e, tol=1e-12):
+    """
+    Solve Kepler's equation using Newton-Raphson method.
+    
+    Args:
+        M: Mean anomaly 
+        e: Eccentricity
+        tol: Convergence tolerance
+        
+    Returns:
+        E: Eccentric anomaly solution
+    """
     if M < np.pi:
         E0 = M + e/2
     else:
@@ -36,10 +69,25 @@ def solve_kepler(M, e, tol=1e-12):
     return E
 
 def generate_orbit_lambda3(a, e, n_steps):
-    """Generate orbit using Kepler (for accurate test data)"""
+    """
+    Generate orbital positions and Lambda-F magnitudes.
+    
+    This function creates accurate orbital trajectories using Kepler's equations
+    for testing purposes. The generated data serves as ground truth for the
+    pattern discovery algorithms.
+    
+    Args:
+        a: Semi-major axis
+        e: Eccentricity
+        n_steps: Number of points in the orbit
+        
+    Returns:
+        positions: Array of [x, y, z] coordinates
+        LambdaF_magnitude_list: Magnitudes of structural change vectors
+    """
     positions = []
     
-    # Generate positions
+    # Generate positions for each step
     for step in range(n_steps):
         theta = 2 * np.pi * step / n_steps
         
@@ -81,9 +129,26 @@ def generate_orbit_lambda3(a, e, n_steps):
     return positions, np.array(LambdaF_magnitude_list)
 
 def generate_orbit_detailed(a, e, n_steps=100):
-    """Generate orbit with detailed Λ parameters at each step"""
+    """
+    Generate orbit with comprehensive Λ³ parameter analysis.
+    
+    Computes various structural parameters including:
+    - |ΛF| magnitude and derivatives
+    - Angular velocities
+    - Topological charge Q_Λ
+    - Radial gradients
+    
+    Args:
+        a: Semi-major axis
+        e: Eccentricity 
+        n_steps: Number of orbital points
+        
+    Returns:
+        DataFrame containing all computed parameters
+    """
     # Use Kepler for accurate positions
     positions, LF_mags = generate_orbit_lambda3(a, e, n_steps)
+    
     # Calculate Λ parameters at each step
     lambda_params = {
         'step': list(range(n_steps)),
@@ -108,8 +173,6 @@ def generate_orbit_detailed(a, e, n_steps=100):
     # Distance variations
     lambda_params['r_gradient'] = np.gradient(lambda_params['r'])
     
-    # NO ENERGY! Just pure geometric quantities
-    
     # Topological charge Q_Λ - CORRECTED for scalar |ΛF|
     Q_Lambda = np.zeros(n_steps)
     
@@ -126,7 +189,10 @@ def generate_orbit_detailed(a, e, n_steps=100):
     
     return pd.DataFrame(lambda_params)
 
-# ========= STEP 1: Generate diverse orbit samples =========
+# =============================================================================
+# Data Generation Pipeline
+# =============================================================================
+
 print("🌍 STEP 1: Generating Orbit Samples with Kepler (for accurate test data)")
 print("="*60)
 
@@ -152,7 +218,10 @@ print(f"\n✅ Generated {n_samples} orbits with {len(df_all)} total data points"
 print("🎉 Data generation uses Kepler for accuracy,")
 print("   but analysis will be pure Λ³ - NO PHYSICS in prediction!")
 
-# ========= STEP 2: Correlation Analysis =========
+# =============================================================================
+# Correlation Analysis
+# =============================================================================
+
 print("\n📊 STEP 2: Correlation Analysis")
 print("="*60)
 
@@ -170,7 +239,10 @@ print("-" * 50)
 for param, stats in correlations.items():
     print(f"{param:<20}: r={stats['correlation']:>7.4f}, p={stats['p_value']:.2e}")
 
-# ========= STEP 3: Pattern Discovery =========
+# =============================================================================
+# Feature Engineering from Orbital Windows
+# =============================================================================
+
 print("\n🔍 STEP 3: Discovering Patterns in 100-Step Windows")
 print("="*60)
 
@@ -223,7 +295,10 @@ for orbit_id in range(n_samples):
 
 df_features = pd.DataFrame(window_features)
 
-# ========= STEP 4: Find Best Predictive Features =========
+# =============================================================================
+# Feature Selection and Correlation Analysis
+# =============================================================================
+
 print("\n🎯 STEP 4: Finding Best Features for Eccentricity Prediction")
 print("="*60)
 
@@ -242,26 +317,28 @@ print("-" * 50)
 for feature, corr in sorted_features[:10]:
     print(f"{feature:<20}: r = {corr:>7.4f}")
 
-# ========= STEP 5: Empirical Formula Discovery =========
+# =============================================================================
+# Empirical Formula Discovery
+# =============================================================================
+
 print("\n📐 STEP 5: Discovering Empirical Formulas")
 print("="*60)
 
-# Try different functional forms
+# Model fitting functions
 def fit_power_law(x, a, b, c):
-    """e = a * x^b + c"""
+    """Power law model: e = a * x^b + c"""
     return a * np.power(np.abs(x), b) + c
 
 def fit_exponential(x, a, b, c):
-    """e = a * exp(b * x) + c"""
+    """Exponential model: e = a * exp(b * x) + c"""
     return a * np.exp(b * x) + c
 
 def fit_logarithmic(x, a, b, c):
-    """e = a * log(|x| + 1) + b * x + c"""
+    """Logarithmic model: e = a * log(|x| + 1) + b * x + c"""
     return a * np.log(np.abs(x) + 1) + b * x + c
 
-# Special formula for r_range (we know it should be e = r_range/2)
 def fit_linear(x, a, b):
-    """e = a * x + b"""
+    """Linear model: e = a * x + b"""
     return a * x + b
 
 # Fit models for top features
@@ -271,7 +348,6 @@ for feature, _ in sorted_features[:5]:
     y_data = df_features['e'].values
     
     if feature == 'r_range':
-        # We know this should be linear!
         from scipy.optimize import curve_fit
         popt, _ = curve_fit(fit_linear, x_data, y_data)
         y_pred = fit_linear(x_data, *popt)
@@ -322,7 +398,10 @@ for feature, _ in sorted_features[:5]:
         if best_model['name'] == 'power':
             print(f"  Formula: e = {best_model['params'][0]:.3f} * |{feature}|^{best_model['params'][1]:.3f} + {best_model['params'][2]:.3f}")
 
-# ========= STEP 6: Multi-feature Prediction =========
+# =============================================================================
+# Machine Learning Model Training
+# =============================================================================
+
 print("\n🤖 STEP 6: Multi-Feature Eccentricity Prediction")
 print("="*60)
 
@@ -360,7 +439,10 @@ print(f"\nFeature Importances:")
 for feat, imp in feature_importance[:5]:
     print(f"  {feat:<20}: {imp:.4f}")
 
-# ========= STEP 7: Visualization =========
+# =============================================================================
+# Visualization
+# =============================================================================
+
 fig, axes = plt.subplots(2, 3, figsize=(18, 12))
 
 # 1. |ΛF| patterns for different eccentricities
@@ -398,7 +480,7 @@ sns.heatmap(corr_matrix, annot=True, fmt='.2f', cmap='coolwarm', center=0,
             ax=ax, cbar_kws={'label': 'Correlation'})
 ax.set_title('Feature Correlation Matrix')
 
-# 4. Best single predictor (r_range)
+# 4. Best single predictor
 ax = axes[1, 0]
 best_feature = sorted_features[0][0]
 ax.scatter(df_features[best_feature], df_features['e'], alpha=0.6, s=20)
@@ -440,7 +522,10 @@ ax.grid(True, alpha=0.3)
 plt.tight_layout()
 plt.show()
 
-# ========= STEP 8: Generate Predictive Equations =========
+# =============================================================================
+# Final Predictive Model
+# =============================================================================
+
 print("\n✨ STEP 8: Final Predictive Equations")
 print("="*60)
 
