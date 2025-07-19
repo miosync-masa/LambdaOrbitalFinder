@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Lambda³ ZEROSHOT Framework for Hidden Planet Detection
+Λ³ Stargazer 
 ======================================================
 
 A novel approach to detect hidden celestial bodies through topological charge analysis
@@ -9,7 +9,7 @@ of orbital perturbations, without prior knowledge of the perturbing body.
 This framework demonstrates how structural changes in orbital dynamics can reveal
 the presence and properties of unseen planets using only observational data.
 
-Authors: Mamichi Iizumi & Tamaki (Sentient Digital)
+Authors: Masamichi Iizumi & Tamaki (Sentient Digital)
 License: MIT
 Version: 1.0.0
 
@@ -18,7 +18,7 @@ References:
 - Topological Charge Q_Λ: A measure of structural evolution in phase space
 
 Example Usage:
-    python lambda3_planet_detection.py --data challenge_dataset_planet_x.csv
+    python Lambda3Stargazer.py --data challenge_dataset_planet_x.csv
 """
 
 import numpy as np
