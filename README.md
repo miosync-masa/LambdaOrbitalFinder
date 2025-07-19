@@ -29,6 +29,8 @@ Both: Perfect results without Newton, Kepler, or F=ma
 ### 📊 Path 1: AI-Driven Discovery
 **Bottom-up: Data → Patterns → Laws**
 
+Code:　ai_for_Science.py
+
 - **Method**: Machine learning analyzes 20,000 orbital data points
 - **Discovery**: Scale-invariant law for eccentricity
 - **Result**: R² = 1.0000 perfect prediction
