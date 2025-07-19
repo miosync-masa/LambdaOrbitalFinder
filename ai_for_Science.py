@@ -320,7 +320,6 @@ for feature, corr in sorted_features[:10]:
 # =============================================================================
 # Empirical Formula Discovery
 # =============================================================================
-
 print("\n📐 STEP 5: Discovering Empirical Formulas")
 print("="*60)
 
@@ -347,24 +346,9 @@ for feature, _ in sorted_features[:5]:
     x_data = df_features[feature].values
     y_data = df_features['e'].values
     
-    if feature == 'r_range':
-        from scipy.optimize import curve_fit
-        popt, _ = curve_fit(fit_linear, x_data, y_data)
-        y_pred = fit_linear(x_data, *popt)
-        r2 = r2_score(y_data, y_pred)
-        best_models[feature] = {
-            'name': 'linear',
-            'params': popt,
-            'r2': r2,
-            'func': fit_linear
-        }
-        print(f"\n{feature}:")
-        print(f"  Best model: linear")
-        print(f"  R² = {r2:.4f}")
-        print(f"  Formula: e = {popt[0]:.3f} * {feature} + {popt[1]:.3f}")
-        continue
-    
+    # All models to test - no special treatment!
     models = {
+        'linear': fit_linear,
         'power': fit_power_law,
         'exponential': fit_exponential,
         'logarithmic': fit_logarithmic
@@ -375,6 +359,7 @@ for feature, _ in sorted_features[:5]:
     
     for model_name, model_func in models.items():
         try:
+            from scipy.optimize import curve_fit
             popt, _ = curve_fit(model_func, x_data, y_data, maxfev=5000)
             y_pred = model_func(x_data, *popt)
             r2 = r2_score(y_data, y_pred)
@@ -395,8 +380,16 @@ for feature, _ in sorted_features[:5]:
         print(f"\n{feature}:")
         print(f"  Best model: {best_model['name']}")
         print(f"  R² = {best_model['r2']:.4f}")
-        if best_model['name'] == 'power':
+        
+        # Format formula based on model type
+        if best_model['name'] == 'linear':
+            print(f"  Formula: e = {best_model['params'][0]:.3f} * {feature} + {best_model['params'][1]:.3f}")
+        elif best_model['name'] == 'power':
             print(f"  Formula: e = {best_model['params'][0]:.3f} * |{feature}|^{best_model['params'][1]:.3f} + {best_model['params'][2]:.3f}")
+        elif best_model['name'] == 'exponential':
+            print(f"  Formula: e = {best_model['params'][0]:.3f} * exp({best_model['params'][1]:.3f} * {feature}) + {best_model['params'][2]:.3f}")
+        elif best_model['name'] == 'logarithmic':
+            print(f"  Formula: e = {best_model['params'][0]:.3f} * log(|{feature}| + 1) + {best_model['params'][1]:.3f} * {feature} + {best_model['params'][2]:.3f}")
 
 # =============================================================================
 # Machine Learning Model Training
