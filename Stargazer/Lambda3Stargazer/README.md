@@ -7,7 +7,7 @@
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/python-3.10+-blue.svg" alt="Python 3.10+"></a>
   <a href="#"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License"></a>
-  <a href="https://colab.research.google.com/drive/1WAEb290S7z8hOlzL3RZdgFQxq5EdYkDv"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="colab"></a>
+  <a href="https://colab.research.google.com/drive/18FC22oLXxk0WZ3zxSbtdKFY_Qw9OpxlX?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="colab"></a>
 </p>
 
 **Λ³ Stargazer** - A revolutionary framework to detect hidden celestial bodies through topological charge analysis of orbital perturbations, gazing beyond the visible to find unseen worlds.
