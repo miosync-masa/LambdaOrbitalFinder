@@ -2,7 +2,7 @@
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Stars](https://img.shields.io/github/stars/miosync-masa/LambdaOrbitalFinder?style=social)](https://github.com/miosync-masa/LambdaOrbitalFinder)
+[![Stars](https://img.shields.io/github/stars/miosync-masa/LambdaOrbitalFinder/?style=social)](https://github.com//miosync-masa/LambdaOrbitalFinder/)
 
 **Λ³ Stargazer** - A revolutionary framework to detect hidden celestial bodies through topological charge analysis of orbital perturbations, gazing beyond the visible to find unseen worlds.
 
@@ -23,7 +23,7 @@
 ```bash
 # Clone the repository
 git clone https://github.com/miosync-masa/LambdaOrbitalFinder.git
-cd Stargazer/Lambda3Stargazer
+cd LambdaOrbitalFinder/Stargazer/Lambda3Stargazer
 
 # Install dependencies
 pip install -r requirements.txt
@@ -171,10 +171,6 @@ Install all dependencies:
 pip install -r requirements.txt
 ```
 
-## 🤝 Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
 ### Development Setup
 
 ```bash
@@ -198,8 +194,8 @@ If you use this framework in your research, please cite:
 @software{lambda3_stargazer,
   author = {Iizumi, Mamichi and Tamaki},
   title = {Λ³ Stargazer: Topological Charge Analysis for Hidden Planet Detection},
-  year = {2024},
-  url = {https://github.com/yourusername/lambda3-stargazer},
+  year = {2025},
+  url = {https://github.com/miosync-masa/LambdaOrbitalFinder},
   note = {A framework for detecting unseen celestial bodies through orbital perturbation analysis}
 }
 ```
@@ -216,9 +212,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-- **Mamichi Iizumi**: [your.email@example.com]
-- **Project Homepage**: [https://github.com/yourusername/lambda3-framework]
+- **Mamichi Iizumi**: [m.iizumi@miosync.email]
+- **Project Homepage**: [https://github.com/miosync-masa/LambdaOrbitalFinder]
 
 ---
 
-*"Detecting the invisible through the lens of topology"* ✨
+*"Gazing beyond the visible, discovering the invisible"* 🌠
+
+**Λ³ Stargazer** - Where topology meets astronomy to reveal hidden worlds.
