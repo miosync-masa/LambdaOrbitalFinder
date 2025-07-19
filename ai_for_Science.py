@@ -133,15 +133,16 @@ print("="*60)
 # Generate orbits with different eccentricities
 n_samples = 200
 e_values = np.linspace(0.0, 0.9, n_samples)
-a_value = 1.0  # Normalized semi-major axis
+a_values = np.random.uniform(0.5, 2.0, n_samples) 
 
 all_orbits = []
-for i, e in enumerate(e_values):
+for i, (e, a) in enumerate(zip(e_values, a_values)):
     if i % 40 == 0:
-        print(f"  Generating orbit {i+1}/{n_samples} (e={e:.3f})")
+        print(f"  Generating orbit {i+1}/{n_samples} (e={e:.3f}, a={a:.3f})")
     
-    orbit_data = generate_orbit_detailed(a_value, e)
+    orbit_data = generate_orbit_detailed(a, e)
     orbit_data['e'] = e
+    orbit_data['a'] = a
     orbit_data['orbit_id'] = i
     all_orbits.append(orbit_data)
 
@@ -157,7 +158,7 @@ print("="*60)
 
 # Calculate correlations between Λ parameters and eccentricity
 param_columns = ['LF_mag', 'LF_gradient', 'LF_curvature', 'angular_velocity', 
-                'r', 'r_gradient', 'Q_Lambda', 'Q_Lambda_rate']  # NO ENERGY!
+                'r', 'r_gradient', 'Q_Lambda', 'Q_Lambda_rate']
 
 correlations = {}
 for param in param_columns:
@@ -210,6 +211,9 @@ for orbit_id in range(n_samples):
         
         # Radius statistics
         'r_range': orbit_data['r'].max() - orbit_data['r'].min(),
+        'r_mean': (orbit_data['r'].max()  + orbit_data['r'].min()) / 2,
+        'r_ratio': orbit_data['r'].max()  / orbit_data['r'].min() ,
+        'r_normalized_range': (orbit_data['r'].max()  - orbit_data['r'].min() ) / (orbit_data['r'].max()  + orbit_data['r'].min() ), 
         
         # Periodicity measure (autocorrelation)
         'LF_autocorr': np.corrcoef(orbit_data['LF_mag'][:-1], orbit_data['LF_mag'][1:])[0,1]
