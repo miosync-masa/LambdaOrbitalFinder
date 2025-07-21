@@ -3,9 +3,7 @@
 </p>
 
 <h1 align="center">Pure Topological Structure Detection Framework</h1>
-> "Time is an illusion. Only Transaction exists!" 
-> 
-> *A revolutionary approach to detecting hidden celestial bodies using pure topological analysis - no physics required!*
+<p align="center">"Time is an illusion. Only Transaction exists!" </br>A revolutionary approach to detecting hidden celestial bodies using pure topological analysis - no physics required!</p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/python-3.10+-blue.svg" alt="Python 3.10+"></a>
