@@ -1,10 +1,17 @@
-# Lambda³ Stargazer 🌌
+<p align="center">
+  <img src="https://www.miosync.link/github/stargazer.png" alt="Lambda³" width="400"/>
+</p>
 
-## Pure Topological Structure Detection Framework
-
+<h1 align="center">Pure Topological Structure Detection Framework</h1>
 > "Time is an illusion. Only Transaction exists!" 
 > 
 > *A revolutionary approach to detecting hidden celestial bodies using pure topological analysis - no physics required!*
+
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/python-3.10+-blue.svg" alt="Python 3.10+"></a>
+  <a href="#"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License"></a>
+  <a href="https://colab.research.google.com/drive/1LYmZKCCaBXqAPGgAg0cLjmqbsT7Sb2K-?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="colab"></a>
+</p>
 
 ---
 
