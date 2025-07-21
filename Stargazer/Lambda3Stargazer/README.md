@@ -28,7 +28,7 @@ Lambda³ Stargazer is a groundbreaking framework that detects hidden gravitation
 ## 🚀 Performance Results
 
 ### Detection Success Rate
-From Makise Kurisu's black hole system simulation:
+From black hole system simulation:
 - **Observable**: Planet α (the data source)
 - **Hidden**: 3 planets (X, Y, Z) perturbing α's orbit
 
@@ -177,9 +177,9 @@ If you use Lambda³ Stargazer in your research, please cite:
 ```
 @software{lambda3stargazer,
   title = {Lambda³ Stargazer: Pure Topological Structure Detection},
-  author = {Iizumi, Mamichi},
+  author = {Iizumi, Mamsaichi},
   year = {2025},
-  url = {https://github.com/yourusername/Lambda3Stargazer}
+  url = {https://github.com/miosync-masa/LambdaOrbitalFinder}
 }
 ```
 
